@@ -1,3 +1,3 @@
 ## **Payload Obfuscation**
 
-![obfuscation](https://github.com/user-attachments/assets/6a2a1d90-bc77-49eb-92ae-6bfd2c45fe2d)
+![AES](https://github.com/user-attachments/assets/a51388ff-9ac6-4f6c-85cc-c9b486a729fd)
