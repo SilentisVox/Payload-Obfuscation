@@ -11,6 +11,16 @@ powershell ./Build.ps1
 ### **Usage**
 
 ```cmd
+cd "./AES Encryption"
+
+& "./Encrypt Payload/Encrypt Payload" "Your Shellcode.bin"
+& "./Decrypt Payload/Decrypt Payload"
+```
+```cmd
+cd "./MAC Obfuscation"
+
+& "./Obfuscate Payload/Obfuscate Payload"
+& "./DeObfuscate Payload/DeObfuscate Payload"
 ```
 
 ## **Brief Explanation**
