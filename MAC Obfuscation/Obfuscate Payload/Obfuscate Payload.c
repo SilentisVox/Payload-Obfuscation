@@ -1,8 +1,8 @@
 #include <stddef.h>
 
-void __stosb(unsigned char* destination, unsigned char value, SIZE_T count)
+void __stosb(unsigned char* destination, unsigned char value, size_t count)
 {
-    for (SIZE_T index = 0; index < count; index++)
+    for (size_t index = 0; index < count; index++)
     {
         destination[index] = value;
     }
