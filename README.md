@@ -13,14 +13,14 @@ powershell ./Build.ps1
 ```cmd
 cd "./AES Encryption"
 
-& "./Encrypt Payload/Encrypt Payload" "Your Shellcode.bin"
-& "./Decrypt Payload/Decrypt Payload"
+& "./Encrypt Payload/Encrypt Payload.exe" "Your Shellcode.bin"
+& "./Decrypt Payload/Decrypt Payload.exe"
 ```
 ```cmd
 cd "./MAC Obfuscation"
 
-& "./Obfuscate Payload/Obfuscate Payload"
-& "./DeObfuscate Payload/DeObfuscate Payload"
+& "./Obfuscate Payload/Obfuscate Payload.exe"
+& "./DeObfuscate Payload/DeObfuscate Payload.exe"
 ```
 
 ## **Brief Explanation**
