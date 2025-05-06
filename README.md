@@ -10,13 +10,13 @@ powershell ./Build.ps1
 
 ### **Usage**
 
-```cmd
+```powershell
 cd "./AES Encryption"
 
-& "./Encrypt Payload/Encrypt Payload.exe" "./Encrypt Payload/Shellcode.bin" & :: calc.exe
+& "./Encrypt Payload/Encrypt Payload.exe" "./Encrypt Payload/Shellcode.bin" # calc.exe
 & "./Decrypt Payload/Decrypt Payload.exe"
 ```
-```cmd
+```powershell
 cd "./MAC Obfuscation"
 
 & "./Obfuscate Payload/Obfuscate Payload.exe"
