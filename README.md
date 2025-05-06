@@ -41,4 +41,4 @@ What we do here, is generate a random 32 byte key and 16 byte initialization vec
 
 #### **MAC Obfuscation**
 
-For MAC address string translation, we take every 6 bytes of ourshellcode, and represent them as strings in the MAC address format `FD:3E:CB:3D:38:E4`. Once obfuscated, print the MAC array to the screen.
+For MAC address string translation, we take every 6 bytes of our shellcode, and represent them as strings in the MAC address format `FD:3E:CB:3D:38:E4`. Once obfuscated, print the MAC array to the screen.
