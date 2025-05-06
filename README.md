@@ -2,7 +2,7 @@
 
 ### **Setup**
 
-```cmd
+```powershell
 git clone https://github.com/SilentisVox/Payload-Obfuscation
 cd Payload-Obfuscation
 powershell ./Build.ps1
