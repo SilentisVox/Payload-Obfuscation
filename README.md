@@ -25,4 +25,4 @@ cd "./MAC Obfuscation"
 
 ## **Brief Explanation**
 
-![AES](https://github.com/user-attachments/assets/a51388ff-9ac6-4f6c-85cc-c9b486a729fd)
+![payload](https://github.com/user-attachments/assets/da45ff0c-ca14-44fa-8d57-9fc7da8a4746)
