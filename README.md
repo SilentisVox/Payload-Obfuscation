@@ -13,7 +13,7 @@ powershell ./Build.ps1
 ```cmd
 cd "./AES Encryption"
 
-& "./Encrypt Payload/Encrypt Payload.exe" "Your Shellcode.bin"
+& "./Encrypt Payload/Encrypt Payload.exe" "./Encrypt Payload/Shellcode.bin" # calc.exe
 & "./Decrypt Payload/Decrypt Payload.exe"
 ```
 ```cmd
