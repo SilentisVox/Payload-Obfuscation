@@ -48,5 +48,5 @@ void main()
 {
     // Just like this. Super easy.
 
-	GenerateMacOutput(shellcode, sizeof(shellcode));
+    GenerateMacOutput(shellcode, sizeof(shellcode));
 }
