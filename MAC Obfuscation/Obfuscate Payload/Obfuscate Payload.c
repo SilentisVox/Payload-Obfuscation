@@ -1,13 +1,3 @@
-#include <stddef.h>
-
-void __stosb(unsigned char* destination, unsigned char value, size_t count)
-{
-    for (size_t index = 0; index < count; index++)
-    {
-        destination[index] = value;
-    }
-}
-
 #include <windows.h>
 #include <stdio.h>
 
