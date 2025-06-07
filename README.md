@@ -34,3 +34,7 @@ cd "./MAC Obfuscation"
 & "./Obfuscate Payload/Obfuscate Payload.exe"
 & "./DeObfuscate Payload/DeObfuscate Payload.exe"
 ```
+
+## Brief Explanation
+
+![payload](assets/payload.jpg)
