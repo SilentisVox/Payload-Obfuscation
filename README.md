@@ -36,21 +36,16 @@ Disguising our shellcode as an array of MAC addresses, as quite a few EXEs come 
 ### Encryption.
 
 For brevity, and simplicity, my encryption algorithm will be one of the most simple.
-By taking a randomized table of bytes, and shifting them according to a key of bytes, we create an encryption.
-This encryption is named as **Vigenere**, where a row of ceasar ciphers becomes an encryption table.
+By taking a randomized key of bytes, and XORing them according to a index of the shellcode bytes, we create an encryption.
+This encryption is named as **XOR**, where a key becomes an encryption table.
 
 Encrypting involves finding the index of the plain byte in the table, and adding the index of the key byte in the table.
 For decryption, finding the index of the encrypted byte, subtract the index of the key byte will reveal the plain byte.
 
 ```c
-void ENCRYPT(char *BUFFER, unsigned long SIZE, char *TABLE, char *KEY, char *OUTPUT) {
-        for (int i = 0; i < SIZE; i++)
-                OUTPUT[index] = TABLE[(indexof(TABLE, BUFFER[i]) + indexof(TABLE, KEY[i])) % 256];
-}
-
-void DECRYPT(char *BUFFER, unsigned long SIZE, char *TABLE, char *KEY, char *OUTPUT) {
-        for (int i = 0; i < SIZE; i++)
-                OUTPUT[index] = TABLE[(indexof(TABLE, BUFFER[i]) - indexof(TABLE, KEY[i]) + 256) % 256];
+VOID XOR_CRYPT(PCHAR BUFFER, ULONG BUFFER_LENGTH, PCHAR KEY, ULONG KEY_LENGTH, PCHAR OUTPUT) {
+        for (INT index = 0; index < BUFFER_LENGTH; index++)
+                OUTPUT[index] = BUFFER[index] ^ KEY[index % KEY_LENGTH];
 }
 ```
 
