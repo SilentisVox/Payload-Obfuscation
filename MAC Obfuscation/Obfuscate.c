@@ -5,8 +5,12 @@
 //
 // CHAR SHELLCODE[420] = { ... };
 
-VOID GenerateMacOutput(PCHAR ArrayName, PCHAR Buffer, ULONG BufferSize) {
-        INT STABLE_SIZE = BufferSize + 6 - BufferSize % 6;
+VOID GenerateMacOutput(
+        PUCHAR ArrayName,
+        PUCHAR Buffer,
+        ULONG BufferSize
+) {
+        INT STABLE_SIZE = BufferSize % 6 ? BufferSize + (6 - BufferSize % 6) : BufferSize;
         UCHAR STABLE[STABLE_SIZE];
 
         for (INT index = 0; index < STABLE_SIZE; index++)
@@ -38,5 +42,5 @@ VOID GenerateMacOutput(PCHAR ArrayName, PCHAR Buffer, ULONG BufferSize) {
 }
 
 VOID main() {
-        GenerateMacOutput("SHELLCODE", /* NAME OF SHELLCODE */, sizeof(/* NAME OF SHELLCODE */));
+        GenerateMacOutput("SHELLCODE", /* SHELLCODE NAME */, sizeof(/* SHELLCODE NAME */));
 }

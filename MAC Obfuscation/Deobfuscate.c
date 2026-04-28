@@ -9,7 +9,10 @@ INT FROMCHAR(INT A) {
         return A < 64 ? A - 48 : A - 55;
 }
 
-VOID MAC2CODE(PUCHAR String, PUCHAR Address) {
+VOID MAC2CODE(
+        PUCHAR String,
+        PUCHAR Address
+) {
         for (INT StringIndex = 0, AddressIndex = 0; AddressIndex < 6; StringIndex += 3, AddressIndex++)
                 Address[AddressIndex] = (FROMCHAR(String[StringIndex]) << 4) | (FROMCHAR(String[StringIndex + 1]));
 }
@@ -33,7 +36,11 @@ VOID MacDeobfuscation(
         }
 }
 
-VOID PrintBufferAsHex(PUCHAR BufferName, PUCHAR Buffer, ULONG BufferSize) {
+VOID PrintBufferAsHex(
+        PUCHAR BufferName,
+        PUCHAR Buffer,
+        ULONG BufferSize
+) {
         printf("CHAR %s[%d] = {", BufferName, BufferSize);
 
         for (INT index = 0; index < BufferSize; index++) {
@@ -49,12 +56,9 @@ VOID PrintBufferAsHex(PUCHAR BufferName, PUCHAR Buffer, ULONG BufferSize) {
 }
 
 VOID main() {
-        ULONG SIZE = /* SIZE OF MAC ARRAY */ * 6;
+        ULONG SIZE = /* MAC ARRAY LENGTH */ * 6;
         CHAR SHELLCODE[SIZE];
 
-        for (INT index = 0; index < SIZE; index++)
-                SHELLCODE[index] = 0;
-
-        MacDeobfuscation(/* NAME OF MAC ARRAY */, 28, SHELLCODE);
+        MacDeobfuscation(/* MAC ARRAY NAME */, /* MAC ARRAY LENGTH */, SHELLCODE);
         PrintBufferAsHex("SHELLCODE", SHELLCODE, SIZE);
 }
