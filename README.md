@@ -47,6 +47,7 @@ Findind the index of the encrypted byte, bytewise XOR with the same index key by
 VOID XOR_CRYPT(PCHAR BUFFER, ULONG BUFFER_LENGTH, PCHAR KEY, ULONG KEY_LENGTH, PCHAR OUTPUT) {
         for (INT index = 0; index < BUFFER_LENGTH; index++)
                 OUTPUT[index] = BUFFER[index] ^ KEY[index % KEY_LENGTH];
+}
 ```
 
 ### ALE Obfuscation.
