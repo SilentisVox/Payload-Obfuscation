@@ -59,8 +59,8 @@ VOID PrintBufferAsHex(
 }
 
 VOID main() {
-        CHAR ENCODED[sizeof(SHELLCODE) * 2];
-        ENCODE_ALE(SHELLCODE, sizeof(SHELLCODE), ENCODED);
+        CHAR ENCODED[sizeof(/* SHELLCODE NAME */) * 2];
+        ENCODE_ALE(/* SHELLCODE NAME */, sizeof(/* SHELLCODE NAME */), ENCODED);
 
         PrintBufferAsHex("ENCODED", ENCODED, sizeof(ENCODED));
 }

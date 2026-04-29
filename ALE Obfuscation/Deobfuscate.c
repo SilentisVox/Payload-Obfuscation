@@ -13,7 +13,7 @@ UCHAR ENCODE[16] = {
 };
 
 INT INDEX(
-        PCHAR A, 
+        PCHAR A,
         ULONG A_LENGTH,
         CHAR B
 ) {
@@ -35,7 +35,28 @@ VOID DECODE_ALE(
                 OUTPUT[index / 2] = (INDEX(ENCODE, 16, LOWER(ENCODED[index])) << 4) | (INDEX(ENCODE, 16, LOWER(ENCODED[index + 1])));
 }
 
+VOID PrintBufferAsHex(
+        PUCHAR BufferName,
+        PUCHAR Buffer,
+        ULONG BufferSize
+) {
+        printf("CHAR %s[%d] = {", BufferName, BufferSize);
+
+        for (INT index = 0; index < BufferSize; index++) {
+                if (!(index % 12))
+                        printf("\n        ");
+
+                printf("0x%02X", Buffer[index]);
+
+                if (index + 1 != BufferSize)
+                        printf(", ");
+        }
+        printf("\n};\n");
+}
+
 VOID main() {
-        CHAR OUTPUT[sizeof(ENCODED) / 2];
-        DECODE_ALE(ENCODED, sizeof(ENCODED), OUTPUT);
+        CHAR DECODED[sizeof(/* ENCODED NAME */) / 2];
+        DECODE_ALE(/* ENCODED NAME */, sizeof(/* ENCODED NAME */), DECODED);
+
+        PrintBufferAsHex("DECODED", DECODED, sizeof(DECODED))
 }
