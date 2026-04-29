@@ -28,7 +28,7 @@ Inserting code that also looks like something it is not will even get flagged.
 ## The solution.
 
 2 solutions come to mind when I think of obfuscating shellcode.
-A solution might just look like **Encyption**;
+A solution might just look like **XOR Encyption**;
 Scrambling our shellcode in a way that only we know, as it becomes unrecognizable.
 Another solution may be **ALE Obfuscation**;
 Disguising our shellcode as an array of Alpha Lettering, as quite a few EXEs come with text embedded in the EXE.
@@ -36,22 +36,17 @@ Disguising our shellcode as an array of Alpha Lettering, as quite a few EXEs com
 ### Encryption.
 
 For brevity, and simplicity, my encryption algorithm will be one of the most simple.
-By taking a randomized table of bytes, and shifting them according to a key of bytes, we create an encryption.
-This encryption is named as **Vigenere**, where a row of ceasar ciphers becomes an encryption table.
+By taking a randomized key of bytes, and XORing them according to a index of the shellcode bytes, we create an encryption.
+This encryption is named as **XOR**, where a key becomes an encryption table.
 
-Encrypting involves finding the index of the plain byte in the table, and adding the index of the key byte in the table.
-For decryption, finding the index of the encrypted byte, subtract the index of the key byte will reveal the plain byte.
+Encrypting involves finding the index of the plain byte, and bytewise XOR the key byte at that index.
+For decryption, it is the same.
+Findind the index of the encrypted byte, bytewise XOR with the same index key byte.
 
 ```c
-void ENCRYPT(char *BUFFER, unsigned long SIZE, char *TABLE, char *KEY, char *OUTPUT) {
-        for (int i = 0; i < SIZE; i++)
-                OUTPUT[index] = TABLE[(indexof(TABLE, BUFFER[i]) + indexof(TABLE, KEY[i])) % 256];
-}
-
-void DECRYPT(char *BUFFER, unsigned long SIZE, char *TABLE, char *KEY, char *OUTPUT) {
-        for (int i = 0; i < SIZE; i++)
-                OUTPUT[index] = TABLE[(indexof(TABLE, BUFFER[i]) - indexof(TABLE, KEY[i]) + 256) % 256];
-}
+VOID XOR_CRYPT(PCHAR BUFFER, ULONG BUFFER_LENGTH, PCHAR KEY, ULONG KEY_LENGTH, PCHAR OUTPUT) {
+        for (INT index = 0; index < BUFFER_LENGTH; index++)
+                OUTPUT[index] = BUFFER[index] ^ KEY[index % KEY_LENGTH];
 ```
 
 ### ALE Obfuscation.
